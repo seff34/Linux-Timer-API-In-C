@@ -57,5 +57,6 @@ DEINIT
     timerDeinit(timer1);
     timerDeinit(timer2);
     timerDeinit(timer3);
+    
 }
 
