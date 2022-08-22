@@ -1,54 +1,89 @@
-<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="LinuxTimerAPI_0"></a>Linux-Timer-API</h1>
-<p class="has-line-data" data-line-start="1" data-line-end="2">#Linux Timer Library with POSIX</p>
-<p class="has-line-data" data-line-start="5" data-line-end="6">#----------EXAMPLE----------</p>
-<p class="has-line-data" data-line-start="9" data-line-end="60">INIT<br>
-{<br>
-//Global Timer Signal Variables<br>
-#define TIMER_SIGNAL_1 SIGRTMIN + 1<br>
-#define TIMER_SIGNAL_2 SIGRTMIN + 2<br>
-#define TIMER_SIGNAL_3 SIGRTMIN + 3<br>
-//Dynamic Memory Allocate<br>
-timerValues_t *timer1 = (timerValues_t *)malloc(sizeof(timerValues_t));<br>
-timerValues_t *timer2 = (timerValues_t *)malloc(sizeof(timerValues_t));<br>
-timerValues_t *timer3 = (timerValues_t *)malloc(sizeof(timerValues_t));<br>
-//Init Signal<br>
-timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);<br>
-timerInit(timer2,TIMER_SIGNAL_2,timerCallback_2);<br>
-timerInit(timer3,TIMER_SIGNAL_3,timerCallback_3);<br>
-}<br>
-START - STOP<br>
-{<br>
-//Timer Start<br>
-timerStart(timer1, 0   , 1000 );  -&gt; 1second Periodic Timer<br>
-timerStart(timer2, 1000, 1000 );  -&gt; 1second Periodic Timer<br>
-timerStart(timer3, 3000, 0 );     -&gt; 3second One Shot Timer<br>
-//Timer Stop<br>
-timerStop(timer1);<br>
-timerStop(timer2);<br>
-timerStop(timer3);<br>
-}<br>
-CALLBACKS<br>
-{<br>
-void timerCallback_1(int signal)<br>
-{<br>
-//(void)signal;<br>
-printf(“Timer Interrupt %d ------------\n”,signal);<br>
-}<br>
-void timerCallback_2(int signal)<br>
-{<br>
-//(void)signal;<br>
-printf(“Timer Interrupt %d ------------\n”,signal);<br>
-}<br>
-void timerCallback_3(int signal)<br>
-{<br>
-//(void)signal;<br>
-printf(“Timer Interrupt %d ------------\n”,signal);<br>
-}<br>
-}<br>
-DEINIT<br>
-{<br>
-//Dynamic Memory Deallocate<br>
-timerDeinit(timer1);<br>
-timerDeinit(timer2);<br>
-timerDeinit(timer3);<br>
-}</p>
+
+# Linux Timer API
+
+Library is a High-Level POSIX TIMER API.
+
+
+
+## API Functions
+
+#### Define Timer Signal
+
+```http
+  #define TIMER_SIGNAL_1 SIGRTMIN + 1
+```
+
+#### Allocate Memory
+```http
+timerValues_t *timer1 = (timerValues_t *)malloc(sizeof(timerValues_t));
+```
+#### Timer Initalize
+```http
+timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Name` | `timer_t` | **Must**. Timer Name |
+| `Signal` | `uint16_t` | **Must**. Timer Signal|
+| `Callback  ` | `void *` | **Must**. Timer Callback Functions |
+
+#### Timer Start
+
+```http
+timerStart(timer1, 0 , 1000 );   -> 1second Periodic Timer
+timerStart(timer2, 1000, 1000 ); -> 1second Periodic Timer
+timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Name` | `timer_t` | **Must**. Timer Name |
+| `Time_Ms` | `uint16_t` | **Must**. One Shot Timer Value (ms)|
+| `Time_Ms  ` | `uint16_t ` | **Must**. Periodic Timer Value (ms) |
+
+#### Timer Stop
+```http
+timerStop(timer1);
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Name` | `timer_t` | **Must**. Timer Name |
+
+#### Timer Deinit
+```http
+timerDeinit(timer1);
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Name` | `timer_t` | **Must**. Timer Name |
+
+#### Timer Callback Function
+```http
+void timerCallback_1(int signal)
+{
+    //(void)signal;
+    printf("Timer Interrupt %d ------------\n",signal);
+}
+```
+## Bilgisayarınızda Çalıştırın
+
+Projeyi klonlayın
+
+```bash
+  git clone https://github.com/seff34/Linux-Timer-API
+```
+
+
+  
+## References:
+
+https://man7.org/linux/
+
+https://demirten.gitbooks.io/linux-sistem-programlama/content/timers/posix.html
+
+
+
+  
