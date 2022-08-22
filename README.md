@@ -8,16 +8,16 @@ Library is a High-Level POSIX TIMER API.
 
 #### Define Timer Signal
 
-```bash
+```c
 #define TIMER_SIGNAL_1 SIGRTMIN + 1
 ```
 
 #### Allocate Memory
-```bash
+```c
 timerValues_t *timer1 = (timerValues_t *)malloc(sizeof(timerValues_t));
 ```
 #### Timer Initalize
-```bash
+```c
 timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
 ```
 
@@ -29,7 +29,7 @@ timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
 
 #### Timer Start
 
-```bash
+```c
 timerStart(timer1, 0 , 1000 );   -> 1second Periodic Timer
 timerStart(timer2, 1000, 1000 ); -> 1second Periodic Timer
 timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
@@ -42,7 +42,7 @@ timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
 | `Time_Ms  ` | `uint16_t ` | Periodic Timer Value (ms) |
 
 #### Timer Stop
-```bash
+```c
 timerStop(timer1);
 ```
 
@@ -51,7 +51,7 @@ timerStop(timer1);
 | `Name` | `timer_t` |  Timer Name |
 
 #### Timer Deinit
-```bash
+```c
 timerDeinit(timer1);
 ```
 
@@ -60,7 +60,7 @@ timerDeinit(timer1);
 | `Name` | `timer_t` | Timer Name |
 
 #### Timer Callback Function
-```bash
+```c
 void timerCallback_1(int signal)
 {
     //(void)signal;
