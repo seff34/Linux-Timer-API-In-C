@@ -24,9 +24,9 @@ timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `Name` | `timer_t` | **Must**. Timer Name |
-| `Signal` | `uint16_t` | **Must**. Timer Signal|
-| `Callback  ` | `void *` | **Must**. Timer Callback Functions |
+| `Name` | `timer_t` | Timer Name |
+| `Signal` | `uint16_t` | Timer Signal|
+| `Callback  ` | `void *` | Timer Callback Functions |
 
 #### Timer Start
 
@@ -38,9 +38,9 @@ timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `Name` | `timer_t` | **Must**. Timer Name |
-| `Time_Ms` | `uint16_t` | **Must**. One Shot Timer Value (ms)|
-| `Time_Ms  ` | `uint16_t ` | **Must**. Periodic Timer Value (ms) |
+| `Name` | `timer_t` | Timer Name |
+| `Time_Ms` | `uint16_t` | One Shot Timer Value (ms)|
+| `Time_Ms  ` | `uint16_t ` | Periodic Timer Value (ms) |
 
 #### Timer Stop
 ```bash
@@ -49,7 +49,7 @@ timerStop(timer1);
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `Name` | `timer_t` | **Must**. Timer Name |
+| `Name` | `timer_t` |  Timer Name |
 
 #### Timer Deinit
 ```bash
@@ -58,7 +58,7 @@ timerDeinit(timer1);
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `Name` | `timer_t` | **Must**. Timer Name |
+| `Name` | `timer_t` | Timer Name |
 
 #### Timer Callback Function
 ```bash
