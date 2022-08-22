@@ -9,16 +9,16 @@ Library is a High-Level POSIX TIMER API.
 
 #### Define Timer Signal
 
-```http
+```bash
   #define TIMER_SIGNAL_1 SIGRTMIN + 1
 ```
 
 #### Allocate Memory
-```http
+```bash
 timerValues_t *timer1 = (timerValues_t *)malloc(sizeof(timerValues_t));
 ```
 #### Timer Initalize
-```http
+```bash
 timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
 ```
 
@@ -30,7 +30,7 @@ timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
 
 #### Timer Start
 
-```http
+```bash
 timerStart(timer1, 0 , 1000 );   -> 1second Periodic Timer
 timerStart(timer2, 1000, 1000 ); -> 1second Periodic Timer
 timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
@@ -43,7 +43,7 @@ timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
 | `Time_Ms  ` | `uint16_t ` | **Must**. Periodic Timer Value (ms) |
 
 #### Timer Stop
-```http
+```bash
 timerStop(timer1);
 ```
 
@@ -52,7 +52,7 @@ timerStop(timer1);
 | `Name` | `timer_t` | **Must**. Timer Name |
 
 #### Timer Deinit
-```http
+```bash
 timerDeinit(timer1);
 ```
 
@@ -61,7 +61,7 @@ timerDeinit(timer1);
 | `Name` | `timer_t` | **Must**. Timer Name |
 
 #### Timer Callback Function
-```http
+```bash
 void timerCallback_1(int signal)
 {
     //(void)signal;
