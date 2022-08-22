@@ -1,7 +1,12 @@
 # Linux-Timer-API
-Linux Timer Library with POSIX 
+#Linux Timer Library with POSIX 
 
-/* EXAMPLE
+
+
+#----------EXAMPLE----------
+
+
+
 INIT
 {
     //Global Timer Signal Variables
@@ -53,4 +58,4 @@ DEINIT
     timerDeinit(timer2);
     timerDeinit(timer3);
 }
-*/
+
