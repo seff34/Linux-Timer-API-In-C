@@ -7,6 +7,9 @@
  * @copyright Copyright (c) 2022
  */
 
+#ifndef __TIMER__H
+#define __TIMER__H
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -76,3 +79,6 @@ int8_t timerStart(timerValues_t *values,uint16_t ONESHOTMS,uint16_t PERIODICMS);
  * @retval [-1]          Fail
  */
 int8_t timerStop(timerValues_t *values);
+
+
+#endif
