@@ -1,3 +1,12 @@
+/**
+ * @file      timer.h
+ * @author    Sefa Eren AKDOGAN
+ * @brief     Linux Timer API
+ * @version   1.0
+ * @date      2022-07-20
+ * @copyright Copyright (c) 2022
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
