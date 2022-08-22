@@ -67,9 +67,9 @@ void timerCallback_1(int signal)
     printf("Timer Interrupt %d ------------\n",signal);
 }
 ```
-## Bilgisayarınızda Çalıştırın
+## Download Code
 
-Projeyi klonlayın
+Clone Project
 
 ```bash
   git clone https://github.com/seff34/Linux-Timer-API
