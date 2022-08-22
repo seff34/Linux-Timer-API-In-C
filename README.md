@@ -1,8 +1,7 @@
 
-# Linux Timer API
+# Embedded Linux Timer API
 
 Library is a High-Level POSIX TIMER API.
-
 
 
 ## API Functions
