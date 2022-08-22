@@ -10,7 +10,7 @@ Library is a High-Level POSIX TIMER API.
 #### Define Timer Signal
 
 ```bash
-  #define TIMER_SIGNAL_1 SIGRTMIN + 1
+#define TIMER_SIGNAL_1 SIGRTMIN + 1
 ```
 
 #### Allocate Memory
