@@ -31,8 +31,8 @@ timerInit(timer1,TIMER_SIGNAL_1,timerCallback_1);
 
 ```c
 timerStart(timer1, 0 , 1000 );   -> 1second Periodic Timer
-timerStart(timer2, 1000, 1000 ); -> 1second Periodic Timer
-timerStart(timer3, 3000, 0 );    -> 3second One Shot Timer
+timerStart(timer1, 1000, 1000 ); -> 1second Periodic Timer
+timerStart(timer1, 3000, 0 );    -> 3second One Shot Timer
 ```
 
 | Parameter | Type     | Description                |
